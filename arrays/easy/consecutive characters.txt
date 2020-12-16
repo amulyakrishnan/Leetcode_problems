@@ -1,0 +1,28 @@
+import java.util.*;
+class Solution {
+    public static int maxPower(String s) {
+        int pow = 1;
+        int res;
+        char ch = s.charAt(0);
+        
+        for(int i=1, maxCount=1;i<s.length();i++){
+            if(ch == s.charAt(i)){
+                maxCount++;
+            }
+            else{
+                maxCount=1;
+                ch=s.charAt(i);
+            }
+            pow = Math.max(maxCount, pow);
+        }
+        return pow;
+        
+    }
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        
+        int result = maxPower(str);
+        System.out.println(result);
+    }
+}
